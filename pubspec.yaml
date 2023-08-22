@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^2.3.2
+  flutter_svg: ^2.0.7
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,9 @@ flutter:
     - assets/rope.jpg
     - assets/Study Room.jpg
     - assets/Wrench.jpg
+    # card
+   
+    
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
