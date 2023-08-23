@@ -16,14 +16,14 @@ void main() {
   runApp(
     MaterialApp(
       theme: ThemeData(
-        colorSchemeSeed: const Color(0x3D2627),
+        // colorSchemeSeed: const Color(0x3D2627),
         useMaterial3: true,
 
         scaffoldBackgroundColor: Colors.red[900],
-        cardColor: const Color.fromARGB(255, 255, 255, 255),
-        // color
-        // shadowColor: Color(0x00ededed),
-        splashColor: const Color(0x00ededed),
+        // cardColor: const Color.fromARGB(255, 255, 255, 255),
+        // splashColor: Color.fromARGB(77, 237, 237, 237),
+        // hoverColor: Color.fromARGB(179, 163, 163, 163),
+        
         fontFamily: 'Bouncy' 'Poppins',
       ),
 

@@ -9,35 +9,36 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              NavBar1(),
-
-              RawMaterialButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/game');
-                },
-                elevation: 2.0,
-                fillColor: Colors.white,
-                child: Icon(
-                  Icons.play_arrow_rounded,
-                  size: 115,
-                  color: Colors.red[800],
-                ),
-                padding: EdgeInsets.all(10.0),
-                splashColor: Colors.black12,
-                shape: CircleBorder(),
+        child: Stack(
+          children: <Widget>[
+            NavBar1(),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RawMaterialButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/game');
+                    },
+                    elevation: 2.0,
+                    fillColor: Colors.white,
+                    child: Icon(
+                      Icons.play_arrow_rounded,
+                      size: 115,
+                      color: Colors.red[800],
+                    ),
+                    padding: EdgeInsets.all(10.0),
+                    splashColor: Colors.black12,
+                    shape: CircleBorder(),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  JoinButton(),
+                ],
               ),
-              SizedBox(
-                height: 45,
-              ),
-              JoinButton(),
-  
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -13,8 +13,9 @@ class NavBar1 extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         // mainAxisSize: MainAxisSize.min
-        children: <Widget>[
+        children: <Widget>[      
           Image(
             width: 80,
             height: 45,
@@ -23,7 +24,6 @@ class NavBar1 extends StatelessWidget {
             image: AssetImage('assets/Cluedo-logo.png'),
           ),
           MenuIcon(),
-          
           
         ],
       ),

@@ -6,6 +6,16 @@ class JoinButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(Color(0xA6FFFFFF)),
+
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius:
+                BorderRadius.circular(10.0), // Adjust the border radius here
+          ),
+        ),
+      ),
       onPressed: () {
         Navigator.pushNamed(context, '/game');
       },
@@ -14,7 +24,6 @@ class JoinButton extends StatelessWidget {
           style: TextStyle(
             fontSize: 30,
             fontFamily: 'Bouncy',
-            // fontWeight: FontWeight.w900,
             letterSpacing: 4.50,
           ),
           children: [

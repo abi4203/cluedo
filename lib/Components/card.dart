@@ -1,6 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-class MyCard extends StatelessWidget {
+class MyCard extends StatefulWidget {
   final String imageAsset;
   final String title;
 
@@ -11,28 +13,50 @@ class MyCard extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _MyCardState createState() => _MyCardState();
+}
+
+class _MyCardState extends State<MyCard> {
+  bool isCrossVisible = false;
+
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 150,
-      height: 100,
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isCrossVisible = true;
+        });
+      },
+      onTapCancel: () {
+        setState(() {
+          isCrossVisible = false;
+        });
+      },
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Image.asset(
-            imageAsset,
-            width: 150,
-            height: 100,
-            fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              widget.imageAsset,
+              width: 150,
+              height: 80,
+              fit: BoxFit.cover,
+              filterQuality: FilterQuality.high,
+            ),
           ),
           Container(
+            width: 150,
+            height: 80,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.6),
+              color: Colors.black.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(10),
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              title,
+              widget.title,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -41,98 +65,30 @@ class MyCard extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class MyCards extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return DraggableScrollableSheet(
-      // expand: fa,
-      initialChildSize: 0.4, // Initial size when the sheet is collapsed
-      minChildSize: 0.1,
-      maxChildSize: 1.0, // Maximum size the sheet can be expanded to
-      builder: (context, scrollController) {
-        return Row(
-          children: [
-            Container(
-              color: Colors.grey[200],
-              // decoration: ShapeDecoration.fromBoxDecoration(source),
-              
-              child: GridView.custom(
-                controller: scrollController,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  mainAxisExtent: 100,
+          if (isCrossVisible)
+            Positioned(
+             
+              top:-13,
+              child: IconButton(
+                onPressed: () {
+                  setState(() {
+                    isCrossVisible = false;
+                  });
+                },
+                icon: Icon(
+                  Icons.close_rounded,
+                  color: Color.fromARGB(255, 214, 14, 14),
+                  // size: 110,
                 ),
-                childrenDelegate: SliverChildListDelegate(
-                  [
-  
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    MyCard(
-                      imageAsset: 'assets/Lounge.jpg',
-                      title: 'Card 4',
-                    ),
-                    // ... add more MyCard widgets ...
-                  ],
-                ),
+                hoverColor: Color.fromARGB(0, 255, 255, 255),
+                iconSize: 110,
+                // alignment: Alignment.topLeft,
+                // visualDensity: VisualDensity(horizontal: -4,vertical:- 4),
+                // padding: EdgeInsets.all(10.0),
               ),
             ),
-          ],
-        );
-      },
+        ],
+      ),
     );
   }
 }

@@ -14,7 +14,7 @@ class PauseIcon extends StatelessWidget {
         grade: 200,
         weight: 700,
       ),
-      color: Colors.white,
+      // color: Colors.white,
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(

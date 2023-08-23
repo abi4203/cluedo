@@ -21,10 +21,11 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+
         children: [
           NavBar1(),
           
-          MyCards(), 
+       
       
           Center(
             child: GuessButton(),
@@ -38,7 +39,7 @@ class Test extends StatelessWidget {
 //SafeArea
 
 //Gestuer Detector
-//INkwell
+//Inkwell
 
 //TextButton
 //OutlinedButton
