@@ -1,18 +1,6 @@
-import 'package:cluedo/Components/navbar1.dart';
-import 'package:cluedo/Components/card.dart';
-import 'package:cluedo/Components/guessButton.dart';
-import 'package:cluedo/main.dart';
+import 'package:cluedo/Components/playingCard.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-final String assetName = 'assets/rope_svg.svg';
-final String pistol_svg = 'assets/pistol_svg.svg';
-
-final Widget svg = SvgPicture.asset(assetName, semanticsLabel: 'Acme Logo');
-
-final Widget pistol = SvgPicture.asset(
-  pistol_svg,
-);
 
 class Test extends StatelessWidget {
   const Test({Key? key}) : super(key: key);
@@ -21,20 +9,33 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-
         children: [
-          NavBar1(),
-          
-       
-      
-          Center(
-            child: GuessButton(),
+          PageView(
+            children: [
+              PlayingCard(
+                imageAsset: 'assets/Wrench.jpg',
+                cardAsset: 'assets/wrench_card.svg',
+              ),
+              PlayingCard(
+                imageAsset: 'assets/Wrench.jpg',
+                cardAsset: 'assets/wrench_card.svg',
+              ),
+              PlayingCard(
+                imageAsset: 'assets/Wrench.jpg',
+                cardAsset: 'assets/wrench_card.svg',
+              ),
+              PlayingCard(
+                imageAsset: 'assets/Wrench.jpg',
+                cardAsset: 'assets/wrench_card.svg',
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 }
+
 
 //SafeArea
 

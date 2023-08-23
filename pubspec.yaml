@@ -60,11 +60,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/Cluedo-logo.png
     - assets/ballroom.jpg
     - assets/billiard.jpg
     - assets/candlestick.jpg
-    - assets/candlestick.jpg
-    - assets/Cluedo-logo.png
     - assets/Dinning Room.jpg
     - assets/gun.jpg
     - assets/Hall.jpg
@@ -76,10 +75,33 @@ flutter:
     - assets/rope.jpg
     - assets/Study Room.jpg
     - assets/Wrench.jpg
-    # card
-   
-    
 
+    # card
+    # rooms
+    - assets/ballroom_card.svg
+    - assets/billiard_card.svg
+    - assets/dinningroom_card.svg
+    - assets/hall_card.svg
+    - assets/kitchen_card.svg
+    - assets/library_card.svg
+    - assets/lounge_card.svg
+    - assets/study_card.svg
+    - assets/conservatory_card.svg
+    #wepons
+    - assets/rope_card.svg
+    - assets/pistol_card.svg
+    - assets/dagger_card.svg
+    - assets/candlestick_card.svg
+    - assets/wrench_card.svg
+    - assets/leadpipe_card.svg
+
+    # people
+    - assets/green_card.svg
+    - assets/plum_card.svg
+    - assets/scarlet_card.svg
+    - assets/peacock_card.svg
+    - assets/mustard_card.svg
+    - assets/white_card.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -99,15 +121,11 @@ flutter:
 
     - family: Poppins
       fonts:
-        - asset: fonts/Poppins-Bold.ttf 
+        - asset: fonts/Poppins-Bold.ttf
         - asset: fonts/Poppins-SemiBold.ttf
         - asset: fonts/Poppins-ExtraBold.ttf
         - asset: fonts/Poppins-Black.ttf
           weight: 800
 
-
-
-
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
