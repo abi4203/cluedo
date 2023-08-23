@@ -1,6 +1,6 @@
-import 'package:cluedo/Components/menubar.dart';
+import 'package:cluedo/Components/navbar1.dart';
 import 'package:cluedo/Components/card.dart';
-import 'package:cluedo/Components/take%20a%20guess.dart';
+import 'package:cluedo/Components/guessButton.dart';
 import 'package:cluedo/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,30 +14,31 @@ final Widget pistol = SvgPicture.asset(
   pistol_svg,
 );
 
-class Main extends StatelessWidget {
-  const Main({Key? key}) : super(key: key);
+class Test extends StatelessWidget {
+  const Test({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Expanded(child: Menubar()),
-            SizedBox(height: 16),
-            Expanded(child: Take_A_Guess_Button()),
-            SizedBox(height: 16),
-            Expanded(
-              child: Grid(),
-            ),
-          ],
-        ),
+      body: Stack(
+        children: [
+          NavBar1(),
+          
+          MyCards(), 
+      
+          Center(
+            child: GuessButton(),
+          ),
+        ],
       ),
     );
   }
 }
 
 //SafeArea
+
+//Gestuer Detector
+//INkwell
 
 //TextButton
 //OutlinedButton
@@ -75,4 +76,8 @@ class Main extends StatelessWidget {
 //popmenu button
 //Dialogue
 
+//RawMaterialButton
+//postioned()
+//stock button
+//Snack bar
 
