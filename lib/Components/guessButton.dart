@@ -6,6 +6,7 @@ class GuessButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
+      child: const Text('Take a guess'),
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
@@ -85,10 +86,10 @@ class GuessButton extends StatelessWidget {
                   decoration: InputDecoration(
                     hintText: 'What',
                     contentPadding:
-                        EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.only(
+                      EdgeInsets.symmetric(vertical: 0, horizontal: 5),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),
                         bottomRight: Radius.circular(20),
                       ),
@@ -121,7 +122,7 @@ class GuessButton extends StatelessWidget {
                     hintText: 'Where',
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-                    border: OutlineInputBorder(
+                      border: OutlineInputBorder(
                       borderSide: BorderSide.none,
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),
@@ -149,7 +150,36 @@ class GuessButton extends StatelessWidget {
           ),
         ),
       ),
-      child: const Text('Take a guess'),
     );
   }
 }
+
+// DropdownButtonFormField<String>(
+//   items: ['Option 1', 'Option 2', 'Option 3'].map((String value) {
+//     return DropdownMenuItem<String>(
+//       value: value,
+//       child: Text(value),
+//     );
+//   }).toList(),
+//   onChanged: (newValue) {
+//     // Handle the selected value
+//   },
+// )
+
+// InputDecoration commonInputDecoration = InputDecoration(
+//   contentPadding: EdgeInsets.all(12),
+//   enabledBorder: OutlineInputBorder(
+//     borderSide: BorderSide(color: Colors.grey),
+//   ),
+//   focusedBorder: OutlineInputBorder(
+//     borderSide: BorderSide(color: Colors.blue),
+//   ),
+// );
+
+// // Usage
+// TextFormField(
+//   decoration: commonInputDecoration.copyWith(
+//     labelText: 'Username',
+//     hintText: 'Enter your username',
+//   ),
+// )

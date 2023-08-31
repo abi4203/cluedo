@@ -36,6 +36,7 @@ void main() {
         '/lobby':(context) => Lobby(),
         '/game': (context) => const SecondScreen(),
         '/howToPlay':(context) => const HowToPlay(),
+        '/test':(context) => Test(),
       },
     ),
   );
