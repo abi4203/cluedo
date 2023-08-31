@@ -35,3 +35,39 @@ class PlayingCard extends StatelessWidget {
     );
   }
 }
+
+class PlayingCardSlideView extends StatelessWidget {
+const PlayingCardSlideView({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+    return Container(
+        width: 160,
+        height: 200,
+        child: Stack(
+          children: [
+            PageView(
+              children: [
+                PlayingCard(
+                  imageAsset: 'assets/Wrench.jpg',
+                  cardAsset: 'assets/wrench_card.svg',
+                ),
+                PlayingCard(
+                  imageAsset: 'assets/Wrench.jpg',
+                  cardAsset: 'assets/wrench_card.svg',
+                ),
+                PlayingCard(
+                  imageAsset: 'assets/Wrench.jpg',
+                  cardAsset: 'assets/wrench_card.svg',
+                ),
+                PlayingCard(
+                  imageAsset: 'assets/Wrench.jpg',
+                  cardAsset: 'assets/wrench_card.svg',
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+  }
+}

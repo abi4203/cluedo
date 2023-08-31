@@ -8,30 +8,7 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          PageView(
-            children: [
-              PlayingCard(
-                imageAsset: 'assets/Wrench.jpg',
-                cardAsset: 'assets/wrench_card.svg',
-              ),
-              PlayingCard(
-                imageAsset: 'assets/Wrench.jpg',
-                cardAsset: 'assets/wrench_card.svg',
-              ),
-              PlayingCard(
-                imageAsset: 'assets/Wrench.jpg',
-                cardAsset: 'assets/wrench_card.svg',
-              ),
-              PlayingCard(
-                imageAsset: 'assets/Wrench.jpg',
-                cardAsset: 'assets/wrench_card.svg',
-              ),
-            ],
-          ),
-        ],
-      ),
+      body: Container(),
     );
   }
 }
