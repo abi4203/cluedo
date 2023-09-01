@@ -23,7 +23,7 @@ void main() {
 
         scaffoldBackgroundColor: Colors.red[900],
         // cardColor: const Color.fromARGB(255, 255, 255, 255),
-        // splashColor: Color.fromARGB(77, 237, 237, 237),
+        // splashColor: Color.fromARGB(255, 237, 237, 237),
         // hoverColor: Color.fromARGB(179, 163, 163, 163),
         
         fontFamily: 'Bouncy' 'Poppins',
@@ -33,7 +33,7 @@ void main() {
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
-        '/lobby':(context) => Lobby(),
+        '/lobby':(context) => const Lobby(),
         '/game': (context) => const SecondScreen(),
         '/howToPlay':(context) => const HowToPlay(),
         '/test':(context) => Test(),

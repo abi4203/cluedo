@@ -1,5 +1,6 @@
-import 'package:cluedo/Components/joinbutton.dart';
+import 'package:cluedo/Components/joinGame.dart';
 import 'package:cluedo/Components/navbar1.dart';
+import 'package:cluedo/pages/test.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -15,6 +16,8 @@ class Home extends StatelessWidget {
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                // verticalDirection: VerticalDirection.up,
                 children: [
                   RawMaterialButton(
                     onPressed: () {
@@ -32,9 +35,9 @@ class Home extends StatelessWidget {
                     shape: CircleBorder(),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
-                  JoinButton(),
+                  JoinGame(),
                 ],
               ),
             ),

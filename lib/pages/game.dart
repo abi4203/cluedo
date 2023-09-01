@@ -15,6 +15,7 @@ class SecondScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           NavBar2(),
+          
           Center(
             child: GuessButton(),
           ),
