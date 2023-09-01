@@ -1,5 +1,6 @@
 import 'package:cluedo/Components/joinGame.dart';
 import 'package:cluedo/Components/navbar1.dart';
+import 'package:cluedo/Components/showNameDialog.dart';
 import 'package:cluedo/pages/test.dart';
 import 'package:flutter/material.dart';
 
@@ -20,9 +21,7 @@ class Home extends StatelessWidget {
                 // verticalDirection: VerticalDirection.up,
                 children: [
                   RawMaterialButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/game');
-                    },
+                    onPressed: () => showNameDialog(context),
                     elevation: 2.0,
                     fillColor: Colors.white,
                     child: Icon(
@@ -37,7 +36,10 @@ class Home extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  JoinGame(),
+                  ElevatedButton(
+                    child: Text('Join Game'),
+                    onPressed: () => showNameDialog(context),
+                  ),
                 ],
               ),
             ),

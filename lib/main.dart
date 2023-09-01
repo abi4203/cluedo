@@ -37,7 +37,7 @@ void main() {
         '/game': (context) => const SecondScreen(),
         '/howToPlay':(context) => const HowToPlay(),
         '/test':(context) => Test(),
-      },
+      },  
     ),
   );
   FlutterNativeSplash.remove();
