@@ -32,11 +32,11 @@ void main() {
       // home: const Game()  ,
       initialRoute: '/',
       routes: {
-        '/': (context) => Home(),
+        '/': (context) => const Home(),
         '/lobby':(context) => const Lobby(),
         '/game': (context) => const SecondScreen(),
         '/howToPlay':(context) => const HowToPlay(),
-        '/test':(context) => Test(),
+        '/test':(context) => const Test(),
       },  
     ),
   );

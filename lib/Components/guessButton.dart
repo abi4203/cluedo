@@ -10,12 +10,14 @@ class GuessButton extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          contentPadding: EdgeInsets.all(16.0),
+          
+          // contentPadding: EdgeInsets.all(16.0),
           backgroundColor: Color.fromARGB(255, 0, 0, 0),
           content: Column(
             mainAxisSize: MainAxisSize.min,
-            // mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             // crossAxisAlignment: CrossAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -30,11 +32,12 @@ class GuessButton extends StatelessWidget {
                 ],
               ),
               // SizedBox(height: 12),
+        
               Container(
                 width: 230,
                 height: 25,
                 child: Text(
-                  'WHO',
+                  'Who',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -43,99 +46,39 @@ class GuessButton extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 30,
-                width: 210,
-                child: TextFormField(
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.next,
+                // height: 30,
+                // width: 210,
+                // padding: EdgeInsets.all(10),
+                child: DropdownButtonFormField(
+                  hint: Text('WHO'),
+                  items: [
+                    'Proffesor Plum',
+                    'Mrs. White',
+                    'Miss Scarlet',
+                    'Mr.Green',
+                    'Colonel Mustard',
+                    'Mrs. Peacock'
+                  ].map((String who) {
+                    return DropdownMenuItem<String>(
+                      value: who,
+                      child: Text(who),
+                      
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    // Handle the selected value
+                  },
+                  elevation: 0,
                   decoration: InputDecoration(
-                    hintText: 'Who',
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 0, horizontal: 8),
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
                     ),
                     fillColor: Colors.grey[200],
                     filled: true,
                   ),
                 ),
               ),
-              SizedBox(height: 16),
-              Container(
-                width: 230,
-                height: 25,
-                child: Text(
-                  'WHAT',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.start,
-                ),
-              ),
-              Container(
-                height: 30,
-                width: 210,
-                child: TextFormField(
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                    hintText: 'What',
-                    contentPadding:
-                      EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                    ),
-                    fillColor: Colors.grey[200],
-                    filled: true,
-                  ),
-                ),
-              ),
-              SizedBox(height: 16),
-              Container(
-                width: 230,
-                height: 25,
-                child: Text(
-                  'WHERE',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.start,
-                ),
-              ),
-              Container(
-                height: 30,
-                width: 210,
-                child: TextFormField(
-                  keyboardType: TextInputType.text,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(
-                    hintText: 'Where',
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-                      border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                    ),
-                    fillColor: Colors.grey[200],
-                    filled: true,
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-
+        
               ElevatedButton(
                 onPressed: () => Navigator.pop(context, 'FINAL SUSPECT'),
                 child: const Text('FINAL SUSPECT'),
