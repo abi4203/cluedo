@@ -106,14 +106,16 @@ class _LobbyState extends State<Lobby> {
                       if (_lobbyReady) {
                         Navigator.pushNamed(context, '/game');
                       } else {
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              content: Text('$_username is Not Ready'),
-                            );
-                          },
+                        Tooltip(
+                          child: Text('not ready'),
                         );
+                        // ScaffoldMessenger.of(context).showSnackBar(
+                        //   const SnackBar(
+                        //     content: Text('Tap'),
+                        //     showCloseIcon: true,
+                        //     // width: 100,
+                        //   ),
+                        // );
                       }
                     },
                   ),

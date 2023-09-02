@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
+final List<Widget> cardList = [];
 
 class Test extends StatefulWidget {
   const Test({Key? key}) : super(key: key);
@@ -12,12 +15,41 @@ class _TestState extends State<Test> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container());
+    return Scaffold(
+      body: Container(
+        child: CarouselSlider.builder(
+          itemCount: 5,
+          itemBuilder: (context, index, realIndex) {
+            return Card(
+              color: Colors.blue,
+              child: Center(
+                child: Text('Card 1'),
+              ),
+            );
+          },
+          options: CarouselOptions(
+            height: 500,
+            aspectRatio: 4 / 5,
+            viewportFraction: 0.8,
+            initialPage: 0,
+            enableInfiniteScroll: true,
+            reverse: false,
+            autoPlay: true,
+            pauseAutoPlayOnTouch: true,
+            autoPlayInterval: Duration(seconds: 3),
+            autoPlayAnimationDuration: Duration(milliseconds: 800),
+            // autoPlayCurve: Curves.fastOutSlowIn,
+            // pageSnapping: false,
+            enlargeCenterPage: true,
+            enlargeFactor: 0.3,
+            scrollDirection: Axis.horizontal,
+            clipBehavior: Clip.hardEdge,
+          ),
+        ),
+      ),
+    );
   }
 }
-
-
-
 //SafeArea
 
 //Gestuer Detector
@@ -63,4 +95,3 @@ class _TestState extends State<Test> {
 //postioned()
 //stock button
 //Snack bar
-
