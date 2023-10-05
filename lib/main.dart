@@ -1,8 +1,3 @@
-import 'package:cluedo/Components/card.dart';
-import 'package:cluedo/Components/menuIcon.dart';
-import 'package:cluedo/Components/pauseIcon.dart';
-import 'package:cluedo/Components/guessButton.dart';
-import 'package:cluedo/Components/playingCard.dart';
 import 'package:cluedo/pages/game.dart';
 import 'package:cluedo/pages/home.dart';
 import 'package:cluedo/pages/howToPlay.dart';
@@ -10,7 +5,6 @@ import 'package:cluedo/pages/lobby.dart';
 import 'package:cluedo/pages/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'Components/navbar1.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

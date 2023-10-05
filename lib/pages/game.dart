@@ -1,5 +1,3 @@
-import 'package:cluedo/Components/card.dart';
-// import 'package:cluedo/Components/navbar2.dart';
 import 'package:cluedo/Components/guessButton.dart';
 import 'package:cluedo/Components/navbar2.dart';
 import 'package:cluedo/Components/scrollPage.dart';
