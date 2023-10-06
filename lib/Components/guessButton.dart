@@ -1,8 +1,36 @@
 import 'package:flutter/material.dart';
 
-class GuessButton extends StatelessWidget {
+class GuessButton extends StatefulWidget {
   const GuessButton({Key? key}) : super(key: key);
 
+  @override
+  State<GuessButton> createState() => _GuessButtonState();
+}
+
+class _GuessButtonState extends State<GuessButton> {
+  final List<String> entries = <String>['Who', 'What', 'Where'];
+  final List<List<String>> items = [
+    [
+      'Proffesor Plum',
+      'Mrs. White',
+      'Miss Scarlet',
+      'Mr.Green',
+      'Colonel Mustard',
+      'Mrs. Peacock'
+    ],
+    ['Rope', 'Dagger', 'Wrench', 'Pistol', 'Candlestick', 'Leadpipe'],
+    [
+      'Study Room',
+      'Kitchen',
+      'Ballroom',
+      'Hall',
+      'Billiard',
+      'Conservatory',
+      'Dinning Room',
+      'Library',
+      'Lounge'
+    ]
+  ];
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -10,59 +38,30 @@ class GuessButton extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          
           // contentPadding: EdgeInsets.all(16.0),
           backgroundColor: Color.fromARGB(255, 0, 0, 0),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            // crossAxisAlignment: CrossAxisAlignment.start,
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    onPressed: () => Navigator.pop(context, 'Cancel'),
-                    icon: Icon(
-                      Icons.close_rounded,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              // SizedBox(height: 12),
-        
-              Container(
-                width: 230,
-                height: 25,
-                child: Text(
-                  'Who',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.start,
-                ),
-              ),
-              Container(
-                // height: 30,
-                // width: 210,
+          icon: IconButton(
+            onPressed: () => Navigator.pop(context, 'Cancel'),
+            icon: Icon(
+              Icons.close_rounded,
+              color: Colors.white,
+            ),
+          ),
+          content: ListView.builder(
+            itemCount: entries.length,
+            itemBuilder: (context, index) {
+              return Container(
+                // height: ,
+                width: 210,
+                margin: EdgeInsetsDirectional.only(bottom: 10),
                 // padding: EdgeInsets.all(10),
                 child: DropdownButtonFormField(
-                  hint: Text('WHO'),
-                  items: [
-                    'Proffesor Plum',
-                    'Mrs. White',
-                    'Miss Scarlet',
-                    'Mr.Green',
-                    'Colonel Mustard',
-                    'Mrs. Peacock'
-                  ].map((String who) {
+                  hint: Text(entries[index]),
+                  dropdownColor: const Color.fromARGB(255, 253, 253, 253),
+                  items: items[index].map((String items) {
                     return DropdownMenuItem<String>(
-                      value: who,
-                      child: Text(who),
-                      
+                      value: items,
+                      child: Text(items),
                     );
                   }).toList(),
                   onChanged: (newValue) {
@@ -77,20 +76,22 @@ class GuessButton extends StatelessWidget {
                     filled: true,
                   ),
                 ),
-              ),
-        
-              ElevatedButton(
-                onPressed: () => Navigator.pop(context, 'FINAL SUSPECT'),
-                child: const Text('FINAL SUSPECT'),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () => Navigator.pop(context, 'OK'),
-                child: const Text('SUSPECT'),
-              ),
-              SizedBox(height: 10),
-            ],
+              );
+            },
           ),
+          actions: [
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context, 'FINAL SUSPECT'),
+              child: const Text('FINAL SUSPECT'),
+            ),
+            SizedBox(height: 20),
+            // suspect
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context, 'OK'),
+              child: const Text('SUSPECT'),
+            ),
+            SizedBox(height: 10),
+          ],
         ),
       ),
     );
